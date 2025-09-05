@@ -1,0 +1,8 @@
+model,PASS,reason,fileReadSuccess,textSplitUpperBoundaryFound,textSplitBottomBoundaryFound,number_of_times_ghost_appears,number_of_times_shadow_appears,number_of_times_widger_appears,answer
+gemini-2.5-pro,False,"Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 2.",,,,,,,
+gemini-2.5-flash,False,"number_of_times_ghost_appears: expected 11, got 1; number_of_times_shadow_appears: expected 25, got 10; answer: expected 402, got 137",True,True,True,1.0,10.0,0.0,137.0
+gemini-2.5-flash-lite,False,"number_of_times_ghost_appears: expected 11, got 1; number_of_times_shadow_appears: expected 25, got 1; answer: expected 402, got 20",True,True,True,1.0,1.0,0.0,20.0
+gemma-3-1b-it,False,"textSplitUpperBoundaryFound: expected True, got False; number_of_times_ghost_appears: expected 11, got 2; number_of_times_shadow_appears: expected 25, got 3; number_of_times_widger_appears: expected 0, got 1; answer: expected 402, got 23",True,False,True,2.0,3.0,1.0,23.0
+gemma-3-4b-it,False,Could not extract JSON: could not extract a JSON/Python dict payload,,,,,,,
+gemma-3-27b-it,False,"number_of_times_ghost_appears: expected 11, got 10; number_of_times_shadow_appears: expected 25, got 21; answer: expected 402, got 343",True,True,True,10.0,21.0,0.0,343.0
+Actual,True,Manually calculated results,True,True,True,11.0,25.0,0.0,402.0

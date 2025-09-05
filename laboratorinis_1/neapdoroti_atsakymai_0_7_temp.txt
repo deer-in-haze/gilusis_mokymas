@@ -1,0 +1,132 @@
+
+
+===== GEMINI-2.5-PRO =====
+```json
+{
+  "fileReadSuccess": true,
+  "textSplitUpperBoundaryFound": true,
+  "textSplitBottomBoundaryFound": true,
+  "number_of_times_ghost_appears": 11,
+  "number_of_times_shadow_appears": 84,
+  "number_of_times_widger_appears": 0,
+  "answer": 1169
+}
+```
+
+
+===== GEMINI-2.5-FLASH =====
+```json
+{
+  "fileReadSuccess": true,
+  "textSplitUpperBoundaryFound": true,
+  "textSplitBottomBoundaryFound": true,
+  "number_of_times_ghost_appears": 13,
+  "number_of_times_shadow_appears": 39,
+  "number_of_times_widger_appears": 0,
+  "answer": 598
+}
+```
+
+
+===== GEMINI-2.5-FLASH-LITE =====
+```json
+{
+  "fileReadSuccess": true,
+  "textSplitUpperBoundaryFound": true,
+  "textSplitBottomBoundaryFound": true,
+  "number_of_times_ghost_appears": 1,
+  "number_of_times_shadow_appears": 5,
+  "number_of_times_widger_appears": 0,
+  "answer": 72
+}
+```
+
+
+===== GEMMA-3-1B-IT =====
+```json
+{
+  "fileReadSuccess": true,
+  "textSplitUpperBoundaryFound": false,
+  "textSplitBottomBoundaryFound": true,
+  "number_of_times_ghost_appears": 2,
+  "number_of_times_shadow_appears": 3,
+  "number_of_times_widger_appears": 1,
+  "answer": 23
+}
+```
+
+
+===== GEMMA-3-4B-IT =====
+```python
+import urllib.request
+import re
+
+def solve():
+    url = "https://www.gutenberg.org/cache/epub/98/pg98.txt"
+    try:
+        response = urllib.request.urlopen(url)
+        text = response.read().decode('utf-8')
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return {
+            "fileReadSuccess": False,
+            "textSplitUpperBoundaryFound": False,
+            "textSplitBottomBoundaryFound": False,
+            "number_of_times_ghost_appears": 0,
+            "number_of_times_shadow_appears": 0,
+            "number_of_times_widger_appears": 0,
+            "answer": 0
+        }
+
+    start_marker = "START OF THE PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES"
+    end_marker = "END OF THE PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES"
+
+    try:
+        start_index = text.index(start_marker) + len(start_marker)
+        end_index = text.index(end_marker)
+        cleaned_text = text[start_index:end_index]
+    except ValueError:
+        print("Start or end marker not found.")
+        return {
+            "fileReadSuccess": False,
+            "textSplitUpperBoundaryFound": False,
+            "textSplitBottomBoundaryFound": False,
+            "number_of_times_ghost_appears": 0,
+            "number_of_times_shadow_appears": 0,
+            "number_of_times_widger_appears": 0,
+            "answer": 0
+        }
+
+    ghost_count = cleaned_text.lower().count("ghost")
+    shadow_count = cleaned_text.lower().count("shadow")
+    widger_count = cleaned_text.lower().count("widger")
+
+    answer = (ghost_count * 7) + (shadow_count * 13) + widger_count
+
+    return {
+        "fileReadSuccess": True,
+        "textSplitUpperBoundaryFound": True,
+        "textSplitBottomBoundaryFound": True,
+        "number_of_times_ghost_appears": ghost_count,
+        "number_of_times_shadow_appears": shadow_count,
+        "number_of_times_widger_appears": widger_count,
+        "answer": answer
+    }
+
+result = solve()
+print(result)
+```
+
+
+===== GEMMA-3-27B-IT =====
+```json
+{
+  "fileReadSuccess": true,
+  "textSplitUpperBoundaryFound": true,
+  "textSplitBottomBoundaryFound": true,
+  "number_of_times_ghost_appears": 10,
+  "number_of_times_shadow_appears": 21,
+  "number_of_times_widger_appears": 0,
+  "answer": 343
+}
+```
