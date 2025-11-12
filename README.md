@@ -10,13 +10,15 @@ This module provides helper functions to read a CSV file containing image paths 
 Install dependencies:
 
 ```
-pip install pandas IPython
+pip install pandas IPython pillow google-generativeai
 ```
 
 These libraries are required for:
 
 pandas — reading and processing CSV files  
 IPython — rendering HTML content and displaying inline images
+illow — Loading and manipulating local image files (PIL)
+google-generativeai — Accessing the Google AI Studio (Gemini) API for your prompt-based model testing
 
 ---
 
