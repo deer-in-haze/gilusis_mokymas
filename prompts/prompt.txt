@@ -1,0 +1,6 @@
+[
+    "This is ", label1, image1,
+    "This is ", label2, image2,
+    "This is ", label3, image3,
+    "Given the previous examples, please respond just with the latin name. This particular plant species grows in Lithuania.", image4
+]
