@@ -16,9 +16,11 @@ pip install pandas IPython pillow google-generativeai
 These libraries are required for:
 
 pandas — reading and processing CSV files  
-IPython — rendering HTML content and displaying inline images
-pillow — Loading and manipulating local image files (PIL)
-google-generativeai — Accessing the Google AI Studio (Gemini) API for your prompt-based model testing
+IPython — rendering HTML content and displaying inline images  
+pillow — loading and manipulating local image files (PIL)  
+google-generativeai — accessing the Google AI Studio (Gemini) API for your prompt-based model testing
+
+
 
 ---
 
